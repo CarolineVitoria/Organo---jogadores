@@ -1,0 +1,53 @@
+.div-form-edit{
+    width: 30%;
+    position: fixed;
+    bottom: 5%;
+    left: 35%;
+    
+    background-color: #151515;
+}
+.div-form-edit .formulario {
+    margin: 0;
+}
+.div-form-edit .formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #151515;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.div-form-edit .formulario form input{
+    height: 20px;
+    width: 80%;
+    border-radius: 1rem;
+}
+.div-form-edit .formulario form label{
+    
+    color: aliceblue;
+}
+.div-form-edit .formulario form h2{
+    color: aliceblue;
+}
+.div-form-edit .formulario form .campo-texto{
+    width: 100%;
+}
+.div-form-edit .formulario form .lista-suspensa select{
+  
+    height: 20px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+.div-form-edit .formulario form .lista-suspensa{
+    width: 80%;
+    
+}
+.div-form-edit .formulario form button {
+    display: none;;
+}
+.div-form-edit .botao{
+    margin-bottom: 10px;
+}

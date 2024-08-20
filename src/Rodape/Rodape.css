@@ -1,0 +1,11 @@
+.footer{
+    display: flex;
+    background-color: #151515;
+    height: 10rem;
+    justify-content: space-around;
+    align-items: center;
+    color: aliceblue;
+}
+.footer .divLogos img{
+    padding-right: 1.5rem ;
+}

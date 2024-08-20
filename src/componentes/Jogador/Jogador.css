@@ -1,0 +1,43 @@
+.jogador {
+    width: 280px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.jogador .cabecalho {
+    height: 7rem;
+    background-color:  #F0F0F0;
+    border-radius: 10px 10px 0px 0px;
+}
+.jogador img {
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -20px;
+    height: 100px;
+}
+
+.jogador .rodape {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.jogador .rodape h4 {
+    color:  #212121;
+    font-size: 32px;
+    line-height: 8px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+.jogador .rodape h5 {
+    font-size: 18px;
+    line-height: 0px;
+    color:#6278F7 ;
+    padding: 0 16px;
+    margin-bottom: 0;
+    
+}
