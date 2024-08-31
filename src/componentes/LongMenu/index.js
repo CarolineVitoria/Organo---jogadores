@@ -17,10 +17,12 @@ export default function LongMenu(props) {
   const aoSelecionar = (e) =>{
     if(e.target.firstChild.data==='Deletar'){
       props.aoDeletar();
+      handleClose();
     }
     else{
       console.log(e.target.firstChild.data)
-      props.aoEditar();;
+      props.aoEditar();
+      handleClose();
     }
   }
 
@@ -48,6 +50,7 @@ export default function LongMenu(props) {
       >
         
         <MenuItem onClick={aoSelecionar}>Deletar</MenuItem>
+        <MenuItem onClick={aoSelecionar}>Editar</MenuItem>
       </Menu>
     </div>
   );

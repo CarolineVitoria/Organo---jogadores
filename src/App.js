@@ -42,19 +42,29 @@ function App() {
   const [jogadores, setJogadores]=
   useState([]);
   
-  const aoNovoJogadorAdicionado = (jogador) =>{
-    console.log(jogador);
-    setJogadores([...jogadores, jogador]);
-  }
-  const aEdicaoDoJogador= () => {
+  const aoNovoJogadorAdicionado = (jogador, vEd) =>{
+    if(vEd){
+      aEdicaoDoJogador(jogador);
+    }else{
+      setJogadores([...jogadores, jogador]);
+    }
 
+  }
+  const aEdicaoDoJogador= (novosDados) => {
+    const newArray = jogadores.map(objeto => {
+      if (objeto.nome === dadosje.nome && objeto.time === dadosje.time) {
+        return novosDados;
+      }
+      return objeto;
+    });
+    
+    setJogadores(newArray);
+    setMostrarFormEdicao(false);
 
   }
     
 
-  const aa = (jogador)=>{
-
-  
+  const apagarj = (jogador)=>{
     setJogadores(jogadores.filter(i=>i.nome !== jogador));
     
     console.log(jogadores)
@@ -63,8 +73,9 @@ function App() {
     <div className="App">
       <Banner/>
       <Formulario
+      value={"Criar card"}
       times = {times.map(time => time.nome)}
-      aoJogadorCadastrado={jogador => aoNovoJogadorAdicionado(jogador)}/>
+      aoJogadorCadastrado={(jogador, variavelEd) => aoNovoJogadorAdicionado(jogador, variavelEd)}/>
       
       {times.map(time=>
       <Time key={time.id}
@@ -76,12 +87,10 @@ function App() {
       aoEditarJogador={(dados)=>
         {setMostrarFormEdicao(!mostrarFormEdicao);
          setDadosje(dados);
-         aEdicaoDoJogador(dados)
-         console.log(dados)
         }}
+      aoJogadorCadastrado={(jogador, variavelEd) => aoNovoJogadorAdicionado(jogador, variavelEd)}
       dadosJogadorEd={dadosje}
-      jogadorNE={(jogadorED)=>aEdicaoDoJogador(jogadores, dadosje, jogadorED)}
-      aoApagarJogador={jogador=>aa(jogador)}
+      aoApagarJogador={jogador=>apagarj(jogador)}
       times = {times}
       mostrarFormEdicao={mostrarFormEdicao}
       

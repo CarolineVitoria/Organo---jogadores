@@ -4,27 +4,36 @@ import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css'
 const Formulario = (props) => {
+    let editavel;
     const [nome, setNome] = useState(()=>{if(props.dadosInput){return props.dadosInput.nome }else{return ''}});
     const [posicao, setPosicao] = useState(()=>{if(props.dadosInput){return props.dadosInput.posicao }else{return ''}});
     const [imagem, setImagem] = useState(()=>{if(props.dadosInput){return props.dadosInput.imagem }else{return ''}});
     const [time, setTime] = useState(()=>{if(props.dadosInput){return props.dadosInput.time }else{return ''}});
 
-
     const aoSalvar = (evento) => {
         evento.preventDefault();
+        if(props.value === "Salvar"){
+            console.log("ififififififi");
+            editavel=true;
+        }else{
+            console.log("else");
+            editavel=false;
+        }
+        console.log("atual valor ved: " +editavel)
+        console.log(props.value);
         props.aoJogadorCadastrado({
             nome,
             posicao,
             imagem,
             time
-        })/*criando objeto de forma enxuta*/
+        }, editavel)/*criando objeto de forma enxuta*/
         setNome('');
         setPosicao('');
         setImagem('');
         setTime('');
     }
     return (
-        <section className='formulario' passarDados={()=>{props.recebeDados({nome, posicao, imagem, time})}}>
+        <section className='formulario'>
             <form onSubmit={aoSalvar} >
                 <h2>Preencha os dados para criar o card do jogador</h2>
                 <CampoTexto 
@@ -52,7 +61,7 @@ const Formulario = (props) => {
                 valor={time}
                 aoAlterado={valor => setTime(valor)}
                 />
-                <Botao value="Criar card"/>
+                <Botao value={props.value}/>
             </form>
         </section>
     )

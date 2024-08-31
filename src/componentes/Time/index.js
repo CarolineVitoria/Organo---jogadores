@@ -6,6 +6,7 @@ const Time = (props) => {
     console.log("time"+props.dadosJogadorEd)
     return (
         props.jogadores.length > 0 && <section className='time' style={{ backgroundColor: props.corSecundaria }}>
+            <input type='color' className='input-color'/>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className='divJogadores'>
                 {props.jogadores.map(jogador =>
@@ -15,7 +16,10 @@ const Time = (props) => {
                         key={jogador.nome} nome={jogador.nome} posicao={jogador.posicao} imagem={jogador.imagem} time={jogador.time} corPrimaria={props.corPrimaria} />)}
 
             </div>
-            <div >{props.mostrarFormEdicao && <FormEdit key={'jum'} jogadorEditado={(j)=>{props.jogadorEditado(j)}} times={props.times} jogadorNE={(obj)=>props.jogadorNE(obj) } />}</div>
+            <div >{props.mostrarFormEdicao && <FormEdit key={'jum'} 
+            dadosJogadoraSerEditado={props.dadosJogadorEd}
+            aoJogadorCadastrado={(jogador, variavelEd) => props.aoJogadorCadastrado(jogador, variavelEd)}
+            jogadorEditado={(j)=>{props.jogadorEditado(j)}} times={props.times} jogadorNE={(obj)=>props.jogadorNE(obj) } />}</div>
 
         </section>
     )
