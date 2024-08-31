@@ -6,7 +6,6 @@ const Time = (props) => {
     console.log("time"+props.dadosJogadorEd)
     return (
         props.jogadores.length > 0 && <section className='time' style={{ backgroundColor: props.corSecundaria }}>
-            <input type='color' className='input-color'/>
             <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className='divJogadores'>
                 {props.jogadores.map(jogador =>
