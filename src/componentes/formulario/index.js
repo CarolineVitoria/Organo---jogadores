@@ -13,14 +13,10 @@ const Formulario = (props) => {
     const aoSalvar = (evento) => {
         evento.preventDefault();
         if(props.value === "Salvar"){
-            console.log("ififififififi");
             editavel=true;
         }else{
-            console.log("else");
             editavel=false;
         }
-        console.log("atual valor ved: " +editavel)
-        console.log(props.value);
         props.aoJogadorCadastrado({
             nome,
             posicao,
@@ -35,7 +31,7 @@ const Formulario = (props) => {
     return (
         <section className='formulario'>
             <form onSubmit={aoSalvar} >
-                <h2>Preencha os dados para criar o card do jogador</h2>
+                <h2>{props.textoP}</h2>
                 <CampoTexto 
                 obrigatorio={true} 
                 label="Nome" 

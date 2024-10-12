@@ -75,7 +75,8 @@ function App() {
       <Formulario
       value={"Criar card"}
       times = {times.map(time => time.nome)}
-      aoJogadorCadastrado={(jogador, variavelEd) => aoNovoJogadorAdicionado(jogador, variavelEd)}/>
+      aoJogadorCadastrado={(jogador, variavelEd) => aoNovoJogadorAdicionado(jogador, variavelEd)}
+      textoP={"Preencha os dados para criar o card do jogador"}/>
       
       {times.map(time=>
       <Time key={time.id}
@@ -93,7 +94,7 @@ function App() {
       aoApagarJogador={jogador=>apagarj(jogador)}
       times = {times}
       mostrarFormEdicao={mostrarFormEdicao}
-      
+      textoP={"Edite os dados do seu jogador"}
       />)}
       
 

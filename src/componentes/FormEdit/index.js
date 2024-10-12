@@ -14,12 +14,10 @@ const FormEdit = (props) => {
             times={props.times.map(time => time.nome)}
             dadosInput={props.dadosJogadoraSerEditado}
             value="Salvar"
+            textoP={props.textoP}
             >
             
             </Formulario>
-            {/* <div onClick={aoSalvarEd}>
-            <Botao value="Salvar"></Botao>
-            </div> */}
             
         </div>
 

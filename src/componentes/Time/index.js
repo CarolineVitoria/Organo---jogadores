@@ -15,10 +15,11 @@ const Time = (props) => {
                         key={jogador.nome} nome={jogador.nome} posicao={jogador.posicao} imagem={jogador.imagem} time={jogador.time} corPrimaria={props.corPrimaria} />)}
 
             </div>
-            <div >{props.mostrarFormEdicao && <FormEdit key={'jum'} 
+            <div >{props.mostrarFormEdicao && <FormEdit key={'FORM_EDITAR'} 
             dadosJogadoraSerEditado={props.dadosJogadorEd}
+            textoP={props.textoP}
             aoJogadorCadastrado={(jogador, variavelEd) => props.aoJogadorCadastrado(jogador, variavelEd)}
-            jogadorEditado={(j)=>{props.jogadorEditado(j)}} times={props.times} jogadorNE={(obj)=>props.jogadorNE(obj) } />}</div>
+            jogadorEditado={(j)=>{props.jogadorEditado(j)}} times={props.times} />}</div>
 
         </section>
     )
